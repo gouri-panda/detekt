@@ -28,8 +28,10 @@ class ForbiddenMethodCallSpec(val env: KotlinCoreEnvironment) {
             SourceLocation(2, 5),
             SourceLocation(3, 5)
         )
-        assertThat(findings[0]).hasMessage("The method `kotlin.io.print` has been forbidden in the Detekt config.")
-        assertThat(findings[1]).hasMessage("The method `kotlin.io.println` has been forbidden in the Detekt config.")
+        assertThat(findings[0])
+            .hasMessage("The method `kotlin.io.print` has been forbidden: print doesn't allow you to configure the output stream. Use a logger instead.")
+        assertThat(findings[1])
+            .hasMessage("The method `kotlin.io.println` has been forbidden: println doesn't allow you to configure the output stream. Use a logger instead.")
     }
 
     @Test
