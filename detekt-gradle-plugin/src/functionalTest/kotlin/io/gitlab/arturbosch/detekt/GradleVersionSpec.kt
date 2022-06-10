@@ -22,6 +22,6 @@ class GradleVersionSpec {
     }
 
     companion object {
-        const val gradleVersion = "6.1"
+        const val gradleVersion = "6.6.1"
     }
 }
